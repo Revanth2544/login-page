@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const ManageGraphContainer = styled.div`
   display: flex;
@@ -66,9 +67,11 @@ const ManageGraphForm = () => {
         newGraphs[index][field] = value;
         setGraphs(newGraphs);
     };
+    const navigate = useNavigate();
 
     const handleSubmit = () => {
         console.log(graphs);
+        navigate('/graph-listing');
     };
 
     return (
