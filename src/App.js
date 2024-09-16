@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import ManageGraphForm from './components/ManageGraphForm';
+import GraphListing from './components/GraphListing';
+import ViewGraph from './components/ViewGraph';
+import GraphApp from './GraphApp';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Route for login page */}
+        <Route path="/login-page" element={<LoginPage />} />
+        
+        {/* Route to manage graphs */}
+        <Route path="/manage-graph" element={<ManageGraphForm />} />
+        
+        {/* Route for graph listing */}
+        <Route path="/graph-listing" element={<GraphListing />} />
+        
+        {/* Route for viewing graph details with dynamic :id */}
+        <Route path="/view-graph/:id" element={<ViewGraph />} />
+
+        {/* <Route path="/graphs" element={<GraphApp />} /> */}
+      </Routes>
+    </Router>
   );
 }
 

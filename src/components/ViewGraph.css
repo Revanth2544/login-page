@@ -1,0 +1,21 @@
+.view-graph-container {
+    display: flex;
+  }
+  
+  .main-content {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    flex: 1;
+    background: #f0f0f0;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
